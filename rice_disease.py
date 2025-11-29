@@ -96,9 +96,9 @@ st.write("---")
 st.header("📥 Download Sample Input Images")
 
 sample_images = {
-    "Input 1": "Input File\\Bacterial leaf blight_11.JPG",
-    "Input 2": "Input File\\Brown spot_26.JPG",
-    "Input 3": "Input File\\Hispa_57.jpg"
+    "Input 1": "Input File//Bacterial leaf blight_11.JPG",
+    "Input 2": "Input File//Brown spot_26.JPG",
+    "Input 3": "Input File//Hispa_57.jpg"
 }
 
 
