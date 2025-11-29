@@ -85,16 +85,53 @@ disease_info = {
 }
 
 
+# Page title
+st.title("🌾 RiceGuard Disease Detection System")
+st.write("---")
+
+
+# -----------------------------------------
+# 📥 Sample Input Image Download Section
+# -----------------------------------------
+st.header("📥 Download Sample Input Images")
+
+sample_images = {
+    "Input 1": "Input File\\Bacterial leaf blight_11.JPG",
+    "Input 2": "Input File\\Brown spot_26.JPG",
+    "Input 3": "Input File\\Hispa_57.jpg"
+}
+
+
+for label, file_path in sample_images.items():
+    try:
+        with open(file_path, "rb") as f:
+            clicked = st.download_button(
+                label=f"⬇️ Download {label}",
+                data=f,
+                file_name=file_path,
+                mime="image/jpeg",
+                key=file_path,
+            )
+            if clicked:
+                st.success("📁 The Input file is saved in your Gallery!")
+    except FileNotFoundError:
+        st.error(f"❌ File '{file_path}' not found. Please upload sample images to your folder.")
+
+st.markdown(
+    "<p style='font-size:30px; font-weight:600; color:#FFFFFF;'>📥 Download the Input Files and Upload them to test the Model.</p>",
+    unsafe_allow_html=True
+)
+
+st.write("---")
+
+
+
 # Streamlit UI
 st.set_page_config(
     page_title="Rice Leaf Disease Detection System",
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
-# Page title
-st.title("🌾 Rice Leaf Disease Detection System")
-st.write("---")
 
 # Upload section
 st.header("Upload Rice Leaf Image")
@@ -109,7 +146,7 @@ if uploaded_file:
     # Display uploaded image
     image = Image.open(temp_file.name)
     
-    col1, col2, col3 = st.columns([1, 2, 1])  # middle column is wider
+    col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.image(image, caption="Uploaded Image", width=600)
 
@@ -340,9 +377,9 @@ if uploaded_file:
     st.markdown(
             """
             <p style="font-size:20px; margin-top:0;">
-                👨‍💻 Developed by: <b>KANNIGA PARAMESHWARI R G</b>
+                👨‍💻 Developed by: <b>Hamjathali I</b>
             </p>
-            <p style="font-size:20px;">💡 Idea: <i>Rice Leaf Disease Detection System</i></p>
+            <p style="font-size:20px;">💡 Idea: <i>RiceGuard Disease Detection System</i></p>
             <p style="font-size:20px;">🛠️ Tech Stack: Python, PyTorch, YOLOv12 (Ultralytics), OpenCV, Streamlit, NumPy, Pandas</p>
             """,
             unsafe_allow_html=True
