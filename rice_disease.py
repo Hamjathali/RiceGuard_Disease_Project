@@ -93,7 +93,7 @@ st.write("---")
 # -----------------------------------------
 # 📥 Sample Input Image Download Section
 # -----------------------------------------
-st.header("📥 Download Sample Input Images")
+st.header("📥 Download Input Images")
 
 sample_images = {
     "Input 1": "Input File//Bacterial leaf blight_11.JPG",
