@@ -9,7 +9,7 @@ import re
 
 
 # Load YOLO model
-model_path = r'C:\Users\Syed\Desktop\dataset\trained_model\rice_leaf_yolov12\weights\best.pt'
+model_path = "models/best.pt"
 model = YOLO(model_path)
 
 
